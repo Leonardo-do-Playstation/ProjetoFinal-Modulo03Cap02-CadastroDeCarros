@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  title = "2025 - Sistema de cadastro de carros. Todos os direitos reservados.";
 }
