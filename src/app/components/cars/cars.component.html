@@ -1,1 +1,32 @@
-<p>cars works!</p>
+<app-car [selectedCar]="selectedCar" (saveEmitter)="saveCar()"></app-car>  <!--Aqui se faz a ligação do atributo book com o componente filho(classe car), indicando que o input vem daqui (Event Binding) -->
+<!--Seguido do event binding, temos o event emitter, que vai executar um metodo no componente filho e chamar um especifico no pai-->
+<div class="container">
+  <h3 class="mb-4 text-center">Carros Cadastrados</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Preço</th>
+        <th>Ano</th>
+        <th class="text-end">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars ; let i = index"> 
+        <td>{{ i + 1 }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.mark }}</td>
+        <td>{{ car.price }}</td>
+        <td>{{ car.year }}</td>
+        <td class="text-end">
+          <button class="btn btn-success me-2" (click)="update(car)">Alterar</button>
+          <button class="btn btn-danger" (click)="remove(car)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

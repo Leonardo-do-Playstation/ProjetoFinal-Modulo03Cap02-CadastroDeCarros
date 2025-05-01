@@ -1,0 +1,27 @@
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Cadastro de Carro</h2>
+    <form #formCar="ngForm"> <!--Names são nescessarios em diretivas ngForm-->
+      <div class="mb-3">
+        <label class="form-label">Modelo do Carro</label>
+        <input name="model" type="text" class="form-control" [(ngModel)]="selectedCar.model"  id="model" placeholder="Ex: Onix, Corolla, etc." required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="mark" class="form-label">Marca</label>
+        <input name="mark" type="text" class="form-control" [(ngModel)]="selectedCar.mark" id="mark" placeholder="Ex: Chevrolet, Toyota, etc." required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="price" class="form-label">Preço</label>
+        <input name="price" type="number" class="form-control" [(ngModel)]="selectedCar.price" id="price" placeholder="Ex: 75000" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="year" class="form-label">Ano</label>
+        <input name="year" type="number" class="form-control" [(ngModel)]="selectedCar.year" id="year" placeholder="Ex: 2023"  required>
+      </div>
+  
+      <button  type="button"   class="btn btn-primary" (click)="save()" [disabled]="formCar.invalid" >Cadastrar/Alterar Veículo</button>
+    </form>
+  </div>
