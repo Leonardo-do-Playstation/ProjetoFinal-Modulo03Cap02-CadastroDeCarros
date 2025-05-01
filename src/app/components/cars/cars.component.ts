@@ -13,7 +13,7 @@ export class CarsComponent {
                                 //e inicializa um array vazio, o declarando como um car, e passando essas,
                                 //informações para  o componente filho.
   isUpdate: Boolean = false;
-  idCount : number = 4;
+  idCount : number = 5;
 
   cars: car[] =[
     {
@@ -37,6 +37,13 @@ export class CarsComponent {
       price: 50000,
       year: 2010,
      },
+     {
+      id: 4,
+      model: "Creta",
+      mark: "Hyundai",
+      price: 55000,
+      year: 2012,
+     }
   ]
   saveCar(){
     if(!this.isUpdate){  //Criar um novo comportamento dentro da classe CarsComponent
