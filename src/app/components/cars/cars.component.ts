@@ -46,20 +46,24 @@ export class CarsComponent {
      }
   ]
   saveCar(){
-    if(!this.isUpdate){  //Criar um novo comportamento dentro da classe CarsComponent
+    if(!this.isUpdate){  
       this.selectedCar.id = this.idCount;
       this.idCount++;
       this.cars.push(this.selectedCar);
    }
-      this.selectedCar = {} as car; //Se eu estiver atalizando um livro, entrar no else
+      this.selectedCar = {} as car; 
       this.isUpdate = false;
   }
    update(selectedCar:car){
-    this.selectedCar = selectedCar; //Nome da propriedade que guarda o carro é selectedCar
+    this.selectedCar = selectedCar; 
     this.isUpdate = true;
 
    }
    remove(removeCar: car){
     this.cars = this.cars.filter( c => c !== removeCar);
+    if(this.selectedCar === removeCar){
+      this.selectedCar = {} as car;
+      this.isUpdate = false;
+    }
    }
 }
